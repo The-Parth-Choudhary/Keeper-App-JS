@@ -2,7 +2,7 @@ var notes = [];
 
 var emptyNotes = [
     { title: "Welcome to Note Keeper App", content: "Here you can keep you notes related to study, work and etc." },
-    { title: "Adding a new Note", content: "To add new notes click on title and type the title of you note and add the content you want to add in it." },
+    { title: "Adding a new Note", content: "To add new notes, click on title and type the title of you note and add the content you want to add in it." },
     { title: "Deleting a Note", content: "To delete an older note click on the delete icon on the bottom right of the note card." }
 ]
 
@@ -184,6 +184,17 @@ function renderCards(searchQuery = "") {
             // Initially hide the edit and delete buttons
             editButton.style.display = "none";
             deleteButton.style.display = "none";
+
+            deleteButton.addEventListener("click", () => {
+                notes.splice(index, 1);
+
+                renderCards();
+            });
+
+            editButton.addEventListener("click", () => {
+                const editForm = createEditForm(index);
+                note.replaceWith(editForm);
+            });
 
             // Toggle button visibility on hover
             note.addEventListener("mouseenter", () => {
