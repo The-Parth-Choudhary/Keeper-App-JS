@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #eeeeee;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+    /* padding: 0 16px; */
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: #f5ba13;
+    /* margin: auto -16px; */
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+}
+
+header h1 {
+    display: inline-block;
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+}
+
+.search{
+    border: 1px solid #b38300;
+    padding: 5px;
+    border-radius: 7px;
+    margin: .5rem;
+    vertical-align: top;
+}
+
+.menu-btn {
+    border: none;
+    background-color: #f5ba13;
+    color: #eeeeee;
+    font-size: 2rem;
+    /* height: 0; */
+}
+
+.menu-btn i {
+    margin: .5rem;
+}
+
+.offcanvas {
+    background-color: #eeeeee;
+    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
+}
+
+.offcanvas-header{
+    padding: 16px 32px;
+    background-color: #f5ba13;
+}
+
+footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: max-content;
+    margin: 0 50%;
+    transform: translate(-50%);
+    height: 2.5rem;
+    opacity: 1;
+}
+
+footer p {
+    color: #b3b3b3;
+}
+
+.note {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+}
+
+.note h1 {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.note i {
+    position: relative;
+    float: right;
+    margin-right: 5px;
+    color: #f5ba13;
+    background-color: transparent;
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+form.create-note {
+    position: relative;
+    width: 480px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form.create-note input,
+form.create-note textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+    max-height: 300px;
+}
+
+form.create-note button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #f5ba13;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+}
+
+@media only screen and (max-width: 550px) {
+
+    form.create-note {
+        position: relative;
+        width: 80%;
+        margin: 30px auto 20px auto;
+        background: #fff;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 0 1px 5px rgb(138, 137, 137);
+    }
+
+    .note {
+        width: 90%;
+    }
+}
+
+#notesList {
+    margin: 0 1rem;
+    padding-bottom: 40px;
+    overflow-y: auto;
+    height: 90%;
+}
