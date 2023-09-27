@@ -197,9 +197,9 @@ function renderCards(searchQuery = "") {
             });
 
             note.appendChild(noteTitle);
-        note.appendChild(noteContent);
-            note.appendChild(editButton);
+            note.appendChild(noteContent);
             note.appendChild(deleteButton);
+            note.appendChild(editButton);
 
             notesList.appendChild(note);
         }
