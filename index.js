@@ -13,6 +13,12 @@ const notesList = document.getElementById("notesList");
 
 renderCards();
 
+const close_btn = document.getElementById("close-btn");
+
+close_btn.addEventListener("click", () => {
+    renderCards();
+})
+
 // createArea.addEventListener("submit", (e) => {
 //     e.preventDefault();
 
