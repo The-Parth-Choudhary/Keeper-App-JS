@@ -162,28 +162,6 @@ header h1 {
     transition: 0s;
 }
 
-.menu-btn {
-    border: none;
-    background-color: #f5ba13;
-    color: #eeeeee;
-    font-size: 2rem;
-    /* height: 0; */
-}
-
-.menu-btn i {
-    margin: .5rem;
-}
-
-.offcanvas {
-    background-color: #eeeeee;
-    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
-}
-
-.offcanvas-header {
-    padding: 16px 32px;
-    background-color: #f5ba13;
-}
-
 footer {
     position: fixed;
     text-align: center;
