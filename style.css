@@ -217,6 +217,10 @@ footer p {
     display: none;
 }
 
+.note i:hover{
+    color: #C07F00;
+}
+
 form.create-note {
     position: relative;
     width: 480px;
@@ -254,6 +258,79 @@ form.create-note button {
     outline: none;
 }
 
+#notesList {
+    margin: 0 1rem;
+    padding-bottom: 40px;
+    overflow-y: auto;
+    height: 90%;
+}
+
+.read-more{
+    background-color: transparent;
+    color: #f5ba13;
+    border: none;
+}
+
+.read-more:hover{
+    color: #C07F00;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    overflow: auto;
+}
+
+.modal-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-height: 80%;
+    overflow-y: scroll;
+}
+
+.modal-heading{
+    background-color: #f5ba13;
+    padding: .3rem .3rem .3rem 2rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: .3rem;
+    right: .6rem;
+    text-align: center;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #ED2B2A;
+}
+
+.modal-close:hover{
+    color: white;
+}
+
+.modal-title {
+    color: #eeeeee;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-content {
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-align: justify;
+    /* max-height: 80%;
+    overflow-y: hidden; */
+}
+
 @media only screen and (max-width: 580px) {
 
     form.create-note {
@@ -277,24 +354,35 @@ form.create-note button {
     .main-title {
         margin-top: 7px;
     }
+
+    .modal-container{
+        font-size: 1rem;
+    }
 }
 
-@media only screen and (max-width: 290px) {
+@media only screen and (max-width: 400px) {
     .form {
         width: 100px;
         --padding: 1rem;
         padding-inline-end: 0;
         --gap: 1em;
     }
-    
-    #notesList{
+
+    #notesList {
         overflow-x: hidden;
+    }
+
+    .modal-container{
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .modal-content{
+        padding: 1rem;
     }
 }
 
-#notesList {
-    margin: 0 1rem;
-    padding-bottom: 40px;
-    overflow-y: auto;
-    height: 90%;
+@media only screen and (max-width: 1000px) {
+    .modal-container{
+        width: 90%;
+    }
 }

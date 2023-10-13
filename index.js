@@ -79,7 +79,6 @@ function renderCards(searchQuery = "") {
     notesList.innerHTML = "";
 
     if (notes.length === 0) {
-        // notes = [...emptyNotes];
         notes = JSON.parse(JSON.stringify([...emptyNotes]));
     }
 
@@ -92,8 +91,9 @@ function renderCards(searchQuery = "") {
             const noteTitle = document.createElement("h1");
             noteTitle.textContent = item.title;
 
+            const truncatedContent = item.content.substring(0, 100);
             const noteContent = document.createElement("p");
-            noteContent.textContent = item.content;
+            noteContent.textContent = truncatedContent;
 
             const editButton = document.createElement("i");
             editButton.classList.add("fa-solid");
@@ -102,6 +102,15 @@ function renderCards(searchQuery = "") {
             const deleteButton = document.createElement("i");
             deleteButton.classList.add("fa-solid");
             deleteButton.classList.add("fa-trash");
+
+            const fullContent = item.content;
+
+            const noteContentwindow = document.createElement("p");
+            noteContentwindow.textContent = truncatedContent;
+
+            const readMoreButton = document.createElement("button");
+            readMoreButton.classList.add("read-more");
+            readMoreButton.textContent = " Read More ...";            
 
             // Initially hide the edit and delete buttons
             editButton.style.display = "none";
@@ -129,6 +138,13 @@ function renderCards(searchQuery = "") {
                 deleteButton.style.display = "none";
             });
 
+            readMoreButton.addEventListener("click", () => {
+                openModal(item.title, fullContent);
+            });
+
+            noteContent.appendChild(readMoreButton);
+            note.appendChild(noteContent);
+
             note.appendChild(noteTitle);
             note.appendChild(noteContent);
             note.appendChild(deleteButton);
@@ -146,4 +162,22 @@ contentInput.addEventListener("input", () => {
 function adjustTextAreaHeight() {
     contentInput.style.height = "auto"; // Reset the height to auto to prevent scrolling
     contentInput.style.height = contentInput.scrollHeight + "px";
+}
+
+// JavaScript
+function openModal(title, content) {
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalContainer = document.getElementById("modalContainer");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalContent = document.getElementById("modalContent");
+
+    modalTitle.textContent = title;
+    modalContent.textContent = content;
+
+    modalOverlay.style.display = "block";
+}
+
+function closeModal() {
+    const modalOverlay = document.getElementById("modalOverlay");
+    modalOverlay.style.display = "none";
 }

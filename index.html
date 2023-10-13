@@ -65,6 +65,19 @@
             <button id="add-button" type="submit"><i class="fa-solid fa-plus"></i></button>
         </form>
     </div>
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay" class="modal-overlay">
+        <!-- Modal Container -->
+        <div id="modalContainer" class="modal-container">
+            <div class="modal-heading">
+                <span id="modalClose" class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></span>
+                <h2 id="modalTitle" class="modal-title"></h2>
+            </div>
+            <div id="modalContent" class="modal-content"></div>
+        </div>
+    </div>
+
     <div id="notesList">
         <!-- Notes List -->
     </div>
