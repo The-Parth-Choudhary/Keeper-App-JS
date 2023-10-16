@@ -1,43 +1,18 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-body {
-    background-color: #eeeeee;
-    background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
-    /* padding: 0 16px; */
-}
-
-header {
-    display: flex;
-    width: 100%;
-    background-color: #f5ba13;
-    /* margin: auto -16px; */
-    padding: 16px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-    justify-content: space-between;
-}
-
-header h1 {
+.help{
     display: inline-block;
-    color: #fff;
-    font-family: "McLaren", cursive;
-    font-weight: 200;
+    color: white;
+    font-size: 2.2rem;
+    padding-right: 1rem;
 }
 
-/* .search{
-    border: 1px solid #b38300;
-    padding: 5px;
-    border-radius: 7px;
-    margin: .5rem;
-    vertical-align: top;
-} */
+.help a{
+    color: white;
+    transition: .3s ease-out;
+}
+
+.help a:hover{
+    color: #996600;
+}
 
 .form {
     --input-bg: #FFf;
@@ -171,7 +146,6 @@ footer {
     margin: 0 50%;
     transform: translate(-50%);
     height: 2.5rem;
-    opacity: 1;
 }
 
 footer p {
@@ -282,7 +256,7 @@ form.create-note button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
     overflow: auto;
 }
@@ -294,8 +268,9 @@ form.create-note button {
     transform: translate(-50%, -50%);
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-height: 80%;
-    overflow-y: scroll;
+    width: 70vw;
+    /* max-height: 80vh; */
+    overflow-y: hidden;
 }
 
 .modal-heading{
@@ -327,8 +302,9 @@ form.create-note button {
     font-size: 1.5rem;
     padding: 2rem;
     text-align: justify;
-    /* max-height: 80%;
-    overflow-y: hidden; */
+    word-wrap: break-word;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 @media only screen and (max-width: 580px) {
@@ -360,7 +336,7 @@ form.create-note button {
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .form {
         width: 100px;
         --padding: 1rem;

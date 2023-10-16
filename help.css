@@ -1,0 +1,43 @@
+.main {
+    margin: 3rem;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    text-align: justify;
+}
+
+.main-content {
+    font-size: 1.5rem;
+}
+
+ol {
+    font-size: 1.5rem;
+}
+
+ol p {
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: disc;
+    font-size: 1.1rem;
+}
+
+.contact {
+    list-style: none;
+}
+
+footer {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: max-content;
+    margin: 0 50%;
+    transform: translate(-50%);
+    height: 2.5rem;
+}
+
+footer p {
+    color: #b3b3b3;
+}

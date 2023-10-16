@@ -18,19 +18,22 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="./common.css">
     <link rel="stylesheet" href="style.css">
 
-    <title>Document</title>
+    <title>Keeper</title>
 </head>
 
 <body>
     <header>
         <div class="main-title">
-            <h1><i class="fa-solid fa-highlighter"></i><span id="title-web">Keeper</span></h1>
+            <a href="./index.html">
+                <h1><i class="fa-solid fa-highlighter"></i><span id="title-web">Keeper</span></h1>
+            </a>
         </div>
 
         <div class="menu">
-            <!-- <input type="text" name="" id="search" class="search" placeholder="Search"> -->
+            <div class="help"><a href="./help.html"><i class="fa-solid fa-circle-question"></i></a></div>
             <form class="form">
                 <label for="search">
                     <input required="" autocomplete="off" placeholder="Search" id="search" type="text">
@@ -54,6 +57,25 @@
                     </button>
                 </label>
             </form>
+
+            <!-- Light & Dark theme button -->
+            <label for="theme" class="theme">
+                <span class="theme__toggle-wrap">
+                    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+                    <span class="theme__fill"></span>
+                    <span class="theme__icon">
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                        <span class="theme__icon-part"></span>
+                    </span>
+                </span>
+            </label>
         </div>
     </header>
 
@@ -71,7 +93,8 @@
         <!-- Modal Container -->
         <div id="modalContainer" class="modal-container">
             <div class="modal-heading">
-                <span id="modalClose" class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></span>
+                <span id="modalClose" class="modal-close" onclick="closeModal()"><i
+                        class="fa-solid fa-xmark"></i></span>
                 <h2 id="modalTitle" class="modal-title"></h2>
             </div>
             <div id="modalContent" class="modal-content"></div>
@@ -84,7 +107,7 @@
 
 
     <footer id="footer">
-        <p>Copyright © 2023</p>
+        <p id="copyright"></p>
     </footer>
 
     <script src="./index.js"></script>

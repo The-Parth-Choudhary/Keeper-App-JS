@@ -1,3 +1,6 @@
+const year = new Date().getFullYear();
+document.getElementById("copyright").textContent = `Copyright © ${year} Parth. All rights reserved.`;
+
 var notes = [];
 
 var emptyNotes = [
@@ -10,6 +13,9 @@ const createArea = document.getElementById("createArea");
 const titleInput = document.getElementById("title");
 const contentInput = document.getElementById("content");
 const notesList = document.getElementById("notesList");
+
+// Load notes from localStorage when the page loads
+loadNotesFromLocalStorage();
 
 renderCards();
 
@@ -54,6 +60,9 @@ createArea.addEventListener("submit", (e) => {
         titleInput.value = "";
         contentInput.value = "";
 
+        // Save the updated notes to localStorage
+        saveNotesToLocalStorage();
+
         renderCards();
     }
 
@@ -80,6 +89,7 @@ function renderCards(searchQuery = "") {
 
     if (notes.length === 0) {
         notes = JSON.parse(JSON.stringify([...emptyNotes]));
+        saveNotesToLocalStorage();
     }
 
     notes.forEach((item, index) => {
@@ -110,7 +120,7 @@ function renderCards(searchQuery = "") {
 
             const readMoreButton = document.createElement("button");
             readMoreButton.classList.add("read-more");
-            readMoreButton.textContent = " Read More ...";            
+            readMoreButton.textContent = " Read More ...";
 
             // Initially hide the edit and delete buttons
             editButton.style.display = "none";
@@ -119,6 +129,7 @@ function renderCards(searchQuery = "") {
             deleteButton.addEventListener("click", () => {
                 notes.splice(index, 1);
 
+                saveNotesToLocalStorage()
                 renderCards();
             });
 
@@ -172,7 +183,7 @@ function openModal(title, content) {
     const modalContent = document.getElementById("modalContent");
 
     modalTitle.textContent = title;
-    modalContent.textContent = content;
+    modalContent.innerText = content;
 
     modalOverlay.style.display = "block";
 }
@@ -180,4 +191,18 @@ function openModal(title, content) {
 function closeModal() {
     const modalOverlay = document.getElementById("modalOverlay");
     modalOverlay.style.display = "none";
+}
+
+function loadNotesFromLocalStorage() {
+    const storedNotes = localStorage.getItem("notes");
+    if (storedNotes) {
+        notes = JSON.parse(storedNotes);
+    } else {
+        // If there are no notes in local storage, use the emptyNotes
+        notes = [...emptyNotes];
+    }
+}
+
+function saveNotesToLocalStorage() {
+    localStorage.setItem("notes", JSON.stringify(notes));
 }
