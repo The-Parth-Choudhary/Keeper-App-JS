@@ -1,21 +1,60 @@
-.help{
+:root{
+    --stroke: #000;
+    --color-header: #f5ba13;
+    --color-note: #fff;
+    --color-light: #ECECEC;
+    --color-dark: #043449;
+    --color-placeholder: grey;
+    --foreground: var(var(--color-light));
+    --background: var(var(--color-dark));
+    --color-box-shadow: #ccc;
+    --color-help: #996600;
+}
+::placeholder{
+    color: var(--color-placeholder);
+}
+
+body{
+    color: var(--foreground); 
+    background: #ECECEC;
+}
+
+.darkmode{
+    --stroke: #fff;
+    --color-header: #23252d;
+    --color-light: #043449;
+    --color-dark: #ECECEC;
+    --color-note: rgb(59, 59, 74);
+    --foreground: var(--color-dark);
+    --background: var(--color-light);
+    --color-placeholder: #fff;
+    --color-box-shadow: #2e2e2e;
+    background: #1E1E21;
+    --color-help: #25B6F4;
+}
+
+#dark-mode-toggle{
+    transition: 1s;
+}
+
+.help {
     display: inline-block;
     color: white;
     font-size: 2.2rem;
     padding-right: 1rem;
 }
 
-.help a{
+.help a {
     color: white;
     transition: .3s ease-out;
 }
 
-.help a:hover{
-    color: #996600;
+.help a:hover {
+    color: var(--color-help);
 }
 
 .form {
-    --input-bg: #FFf;
+    --input-bg: var(--color-note);
     /*  background of input */
     --padding: 1.5em;
     --rotate: 80deg;
@@ -35,6 +74,7 @@
     display: inline-block;
     vertical-align: top;
     margin-top: .4rem;
+    transition: background 0.35s ease-in-out;
 }
 
 .form label {
@@ -52,6 +92,11 @@
     border: 0;
 }
 
+#search{
+    color: var(--foreground);
+    transition: all .35s ease-in-out;
+}
+
 /* style for both icons -- search,close */
 .form svg {
     /* display: block; */
@@ -59,6 +104,7 @@
     transition: 0.3s cubic-bezier(.4, 0, .2, 1);
     position: absolute;
     height: 15px;
+    stroke: var(--stroke);
 }
 
 /* search icon */
@@ -97,6 +143,10 @@
     opacity: 0;
     transform: scale(0);
     visibility: hidden;
+}
+
+.w-5{
+    fill: var(--stroke);
 }
 
 .form input:focus~.icon {
@@ -153,13 +203,14 @@ footer p {
 }
 
 .note {
-    background: #fff;
+    background: var(--color-note);
     border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
+    box-shadow: 0 2px 5px var(--color-box-shadow);
     padding: 10px;
     width: 240px;
     margin: 16px;
     float: left;
+    transition: all 0.35s ease-in-out;
 }
 
 .note h1 {
@@ -191,22 +242,29 @@ footer p {
     display: none;
 }
 
-.note i:hover{
+.note i:hover {
     color: #C07F00;
+}
+
+form.createArea{
+    background-color: red;
 }
 
 form.create-note {
     position: relative;
     width: 480px;
     margin: 30px auto 20px auto;
-    background: #fff;
+    background: var(--color-note);
     padding: 15px;
     border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    box-shadow: 0 3px 5px var(--color-box-shadow);
+    transition: all 0.35s ease-in-out;
 }
 
 form.create-note input,
 form.create-note textarea {
+    background: var(--color-note);
+    color: var(--foreground);
     width: 100%;
     border: none;
     padding: 4px;
@@ -215,6 +273,7 @@ form.create-note textarea {
     font-family: inherit;
     resize: none;
     max-height: 300px;
+    transition: all 0.35s ease-in-out;
 }
 
 form.create-note button {
@@ -239,13 +298,13 @@ form.create-note button {
     height: 90%;
 }
 
-.read-more{
+.read-more {
     background-color: transparent;
     color: #f5ba13;
     border: none;
 }
 
-.read-more:hover{
+.read-more:hover {
     color: #C07F00;
 }
 
@@ -266,15 +325,15 @@ form.create-note button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: var(--color-note);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 70vw;
     /* max-height: 80vh; */
     overflow-y: hidden;
 }
 
-.modal-heading{
-    background-color: #f5ba13;
+.modal-heading {
+    background-color: var(--color-header);
     padding: .3rem .3rem .3rem 2rem;
 }
 
@@ -288,7 +347,7 @@ form.create-note button {
     color: #ED2B2A;
 }
 
-.modal-close:hover{
+.modal-close:hover {
     color: white;
 }
 
@@ -313,10 +372,8 @@ form.create-note button {
         position: relative;
         width: 80%;
         margin: 30px auto 20px auto;
-        background: #fff;
         padding: 15px;
         border-radius: 7px;
-        box-shadow: 0 1px 5px rgb(138, 137, 137);
     }
 
     .note {
@@ -331,7 +388,7 @@ form.create-note button {
         margin-top: 7px;
     }
 
-    .modal-container{
+    .modal-container {
         font-size: 1rem;
     }
 }
@@ -348,17 +405,18 @@ form.create-note button {
         overflow-x: hidden;
     }
 
-    .modal-container{
+    .modal-container {
         min-width: 100%;
         min-height: 100%;
     }
-    .modal-content{
+
+    .modal-content {
         padding: 1rem;
     }
 }
 
 @media only screen and (max-width: 1000px) {
-    .modal-container{
+    .modal-container {
         width: 90%;
     }
 }

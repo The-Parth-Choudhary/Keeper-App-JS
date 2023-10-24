@@ -34,6 +34,7 @@ function createEditForm(index) {
     titleInput.value = notes[index].title;
     contentInput.value = notes[index].content;
 
+    adjustTextAreaHeight();
     renderCards();
 }
 

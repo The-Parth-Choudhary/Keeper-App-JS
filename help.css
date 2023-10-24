@@ -1,10 +1,24 @@
+:root{
+    --color-text: #000;
+    --color-background: #fff;
+    --color-box-shadow: #ccc;
+}
+
+.darkmode{
+    --color-text: #fff;
+    --color-background: rgb(59, 59, 74);
+    --color-box-shadow: #2e2e2e;
+}
+
 .main {
     margin: 3rem;
     padding: 3rem;
-    background-color: white;
+    background-color: var(--color-background);
+    color: var(--color-text);
     border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
+    box-shadow: 0 3px 5px var(--color-box-shadow);
     text-align: justify;
+    transition: all .35s ease-in-out;
 }
 
 .main-content {

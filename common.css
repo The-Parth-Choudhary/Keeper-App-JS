@@ -4,6 +4,33 @@
     box-sizing: border-box;
 }
 
+:root{
+    --color-header: #f5ba13;
+    --color-note: #fff;
+    --color-light: #ECECEC;
+    --color-dark: #043449;
+    --color-placeholder: grey;
+    --foreground: var(var(--color-light));
+    --background: var(var(--color-dark));
+}
+
+.darkmode{
+    --color-header: #23252d;
+    --color-light: #043449;
+    --color-dark: #ECECEC;
+    --color-note: rgb(59, 59, 74);
+    --foreground: var(--color-dark);
+    --background: var(--color-light);
+    --color-placeholder: #fff;
+    background-color: #37373d;
+    background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+::placeholder{
+    color: var(--color-placeholder);
+}
+
 html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -11,16 +38,19 @@ html {
 body {
     background-color: #eeeeee;
     background-image: url("https://www.transparenttextures.com/patterns/white-tiles.png");
-    /* padding: 0 16px; */
+    transition: background .35s ease-in-out;
+    user-select: none;
 }
 
 header {
     display: flex;
     width: 100%;
-    background-color: #f5ba13;
+    /* background-color: #f5ba13; */
+    background: var(--color-header);
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     justify-content: space-between;
+    transition: background 0.35s ease-in-out;
 }
 
 header h1 {

@@ -18,8 +18,8 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./common.css">
-    <link rel="stylesheet" href="style.css">
 
     <title>Keeper</title>
 </head>
@@ -59,11 +59,10 @@
             </form>
 
             <!-- Light & Dark theme button -->
-            <label for="theme" class="theme">
-                <span class="theme__toggle-wrap">
-                    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
-                    <span class="theme__fill"></span>
-                    <span class="theme__icon">
+            <label for="theme" class="theme" id="dark-mode-toggle">
+                <span id = "dark-mode-toggle" class="theme__toggle-wrap">
+                    <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark" >
+                    <span class="theme__icon" id="this-btn">
                         <span class="theme__icon-part"></span>
                         <span class="theme__icon-part"></span>
                         <span class="theme__icon-part"></span>
@@ -110,6 +109,7 @@
         <p id="copyright"></p>
     </footer>
 
+    <script src="./darkMode.js"></script>
     <script src="./index.js"></script>
 </body>
 
