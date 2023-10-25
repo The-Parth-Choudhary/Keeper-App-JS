@@ -5,7 +5,7 @@
 
 Welcome to the Keeper App readme. This document provides information about the Keeper App website.
 
-![Screenshot 2023-09-27 211245](https://github.com/The-Parth-Choudhary/Keeper-App-JS/assets/101794232/5edd9cdd-a00c-4273-bc1b-74af1bee1f54)
+![Screenshot 2023-10-25 105338](https://github.com/The-Parth-Choudhary/Keeper-App-JS/assets/101794232/b2d19eb2-8fd0-488c-8a8e-993f1ff616d3)
 
 
 
@@ -56,6 +56,14 @@ Once the application is running, you will see main menu with various options. Fo
 1. Click on Delete icon to delete the note.
 
 
+
+**Read More**
+1. Click on Read more button which helps user to easily access a particular note.
+
+
+
+**Light/Dark Theme**
+1. Click on Theme button to toggle between Light mode and Dark mode.
 
 ## Contributing
 
