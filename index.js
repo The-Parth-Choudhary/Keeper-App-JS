@@ -1,3 +1,4 @@
+// Set current year in footer
 const year = new Date().getFullYear();
 document.getElementById("copyright").textContent = `Copyright © ${year} Parth. All rights reserved.`;
 
@@ -17,6 +18,7 @@ const notesList = document.getElementById("notesList");
 // Load notes from localStorage when the page loads
 loadNotesFromLocalStorage();
 
+// Render add cards at load
 renderCards();
 
 const close_btn = document.getElementById("close-btn");
@@ -73,13 +75,10 @@ createArea.addEventListener("submit", (e) => {
 const search = document.getElementById("search");
 
 search.addEventListener("input", () => {
-    // Clear any existing search delay (if any)
-    // clearTimeout(searchTimeout);
-
     // Get the search query
     const searchQuery = search.value.trim();
 
-    // Set a 1-second delay before executing the search
+    // Set a half-second delay before executing the search
     setTimeout(() => {
         renderCards(searchQuery);
     }, 500);
@@ -96,6 +95,8 @@ function renderCards(searchQuery = "") {
     notes.forEach((item, index) => {
         // Check if the title contains the search query
         if (item.title.toLowerCase().includes(searchQuery.toLowerCase())) {
+
+            // Creating new note
             const note = document.createElement("div");
             note.classList.add("note");
 
@@ -127,6 +128,7 @@ function renderCards(searchQuery = "") {
             editButton.style.display = "none";
             deleteButton.style.display = "none";
 
+            // Deleting a note
             deleteButton.addEventListener("click", () => {
                 notes.splice(index, 1);
 
@@ -134,6 +136,7 @@ function renderCards(searchQuery = "") {
                 renderCards();
             });
 
+            // Editing a note
             editButton.addEventListener("click", () => {
                 const editForm = createEditForm(index);
                 note.replaceWith(editForm);
@@ -150,6 +153,7 @@ function renderCards(searchQuery = "") {
                 deleteButton.style.display = "none";
             });
 
+            // Read more button
             readMoreButton.addEventListener("click", () => {
                 openModal(item.title, fullContent);
             });
@@ -176,7 +180,7 @@ function adjustTextAreaHeight() {
     contentInput.style.height = contentInput.scrollHeight + "px";
 }
 
-// JavaScript
+// New note pop up window
 function openModal(title, content) {
     const modalOverlay = document.getElementById("modalOverlay");
     const modalContainer = document.getElementById("modalContainer");
@@ -204,6 +208,7 @@ function loadNotesFromLocalStorage() {
     }
 }
 
+// Save notes to local storage
 function saveNotesToLocalStorage() {
     localStorage.setItem("notes", JSON.stringify(notes));
 }

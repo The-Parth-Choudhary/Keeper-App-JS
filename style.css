@@ -1,4 +1,4 @@
-:root{
+:root {
     --stroke: #000;
     --color-header: #f5ba13;
     --color-note: #fff;
@@ -10,16 +10,17 @@
     --color-box-shadow: #ccc;
     --color-help: #996600;
 }
-::placeholder{
+
+::placeholder {
     color: var(--color-placeholder);
 }
 
-body{
-    color: var(--foreground); 
+body {
+    color: var(--foreground);
     background: #ECECEC;
 }
 
-.darkmode{
+.darkmode {
     --stroke: #fff;
     --color-header: #23252d;
     --color-light: #043449;
@@ -33,10 +34,11 @@ body{
     --color-help: #25B6F4;
 }
 
-#dark-mode-toggle{
+#dark-mode-toggle {
     transition: 1s;
 }
 
+/* Help button */
 .help {
     display: inline-block;
     color: white;
@@ -53,6 +55,7 @@ body{
     color: var(--color-help);
 }
 
+/* Search icon */
 .form {
     --input-bg: var(--color-note);
     /*  background of input */
@@ -92,7 +95,7 @@ body{
     border: 0;
 }
 
-#search{
+#search {
     color: var(--foreground);
     transition: all .35s ease-in-out;
 }
@@ -145,7 +148,7 @@ body{
     visibility: hidden;
 }
 
-.w-5{
+.w-5 {
     fill: var(--stroke);
 }
 
@@ -187,6 +190,7 @@ body{
     transition: 0s;
 }
 
+/* Footer */
 footer {
     position: fixed;
     text-align: center;
@@ -202,6 +206,7 @@ footer p {
     color: #b3b3b3;
 }
 
+/* Note card */
 .note {
     background: var(--color-note);
     border-radius: 7px;
@@ -246,7 +251,8 @@ footer p {
     color: #C07F00;
 }
 
-form.createArea{
+/* Creating new note */
+form.createArea {
     background-color: red;
 }
 
@@ -291,6 +297,7 @@ form.create-note button {
     outline: none;
 }
 
+/* Note cards section */
 #notesList {
     margin: 0 1rem;
     padding-bottom: 40px;
@@ -308,6 +315,7 @@ form.create-note button {
     color: #C07F00;
 }
 
+/* Read more pop up window */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -366,6 +374,7 @@ form.create-note button {
     overflow-y: auto;
 }
 
+/* Responsive */
 @media only screen and (max-width: 580px) {
 
     form.create-note {

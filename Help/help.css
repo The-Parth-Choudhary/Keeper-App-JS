@@ -1,0 +1,57 @@
+:root {
+    --color-text: #000;
+    --color-background: #fff;
+    --color-box-shadow: #ccc;
+}
+
+.darkmode {
+    --color-text: #fff;
+    --color-background: rgb(59, 59, 74);
+    --color-box-shadow: #2e2e2e;
+}
+
+.main {
+    margin: 3rem;
+    padding: 3rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border-radius: 7px;
+    box-shadow: 0 3px 5px var(--color-box-shadow);
+    text-align: justify;
+    transition: all .35s ease-in-out;
+}
+
+.main-content {
+    font-size: 1.5rem;
+}
+
+ol {
+    font-size: 1.5rem;
+}
+
+ol p {
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: disc;
+    font-size: 1.1rem;
+}
+
+.contact {
+    list-style: none;
+}
+
+footer {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: max-content;
+    margin: 0 50%;
+    transform: translate(-50%);
+    height: 2.5rem;
+}
+
+footer p {
+    color: #b3b3b3;
+}
